@@ -1,0 +1,67 @@
+<%- include("../partials/header")   %>
+<div class="cui__layout__content">
+  <div class="cui__breadcrumbs">
+    <div class="cui__breadcrumbs__path">
+      <a href="/">Home</a>
+      <span>
+        <span class="cui__breadcrumbs__arrow"></span>
+        <a href="/products">
+          <span> Products</span>
+        </a>
+
+      </span>
+    </div>
+  </div>
+
+  <div class="cui__utils__content">
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <h4 class="mb-4"><strong>Products List</strong></h4>
+          <div class="mb-5">
+
+            <div id="addProductsToolbar">
+
+              <a class="btn btn-primary ml-1" href="/products/add" role="button"><i class="fas fa-plus pr-2"></i>
+                ADD NEW</a>
+
+            </div>
+            <form>
+              <table id="productTable" data-toggle="table" data-pagination="true" data-search="true"
+                data-buttons-align="right" data-show-refresh="true" data-buttons-class="primary" data-id-field="_id"
+                data-select-item-name="_id" data-click-to-select="true" data-ajax="loadProductData"
+                data-toolbar="#addProductsToolbar" data-toolbar-align="right" data-filter-control="true">
+                <thead>
+                  <tr>
+                    <th data-field="state" data-checkbox="true" data-field="_id"></th>
+                    <!-- <th data-checkbox="true" data-field="_id">Item ID</th> -->
+                    <th data-sortable="true" data-field="name" data-filter-control="input">Name</th>
+                    <th data-sortable="true" data-field="category" data-filter-control="select">Category</th>
+                    <th data-sortable="true" data-field="manufacturer" data-filter-control="input">Manufacturer</th>
+
+                    <th data-sortable="true" data-field="model" data-filter-control="input">Model</th>
+                    <th data-sortable="true" data-field="assetTag" data-filter-control="input">Asset Tag</th>
+
+                    <th data-sortable="true" data-field="serialNo" data-filter-control="input">Serial Number</th>
+                    <th data-sortable="true" data-field="location" data-filter-control="input">Location</th>
+                    <th data-sortable="true" data-formatter="formatStatusforTable" data-search-formatter="false"
+                      data-field="status" data-filter-control="select">Status</th>
+
+                    <!-- <th data-sortable="true" data-field="description">Description</th> -->
+                    <th data-field="operate" data-formatter="productOperateFormatter"
+                      data-events="productOperateEvents">Actions</th>
+
+                  </tr>
+                </thead>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./modals/changeProductStatus")   %>
+
+<!-- data-ajax="loadOpsData" -->
+<%- include("../partials/footer")   %>

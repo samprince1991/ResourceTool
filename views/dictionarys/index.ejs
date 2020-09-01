@@ -1,0 +1,169 @@
+<%- include("../partials/header")   %>
+<div class="cui__layout__content">
+  <div class="cui__breadcrumbs">
+    <div class="cui__breadcrumbs__path">
+      <a href="/">Home</a>
+      <span>
+        <span class="cui__breadcrumbs__arrow"></span>
+        <a href="/products">
+          <span>All Dictionary</span>
+        </a>
+      </span>
+    </div>
+  </div>
+
+
+
+  <div class="cui__utils__content">
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <h4 class="mb-4"><strong>Manage Dictionary</strong></h4>
+          <div class="mb-5">
+            <div class="cui__utils__content">
+              <div class="row" id="categoryElement">
+                <div class=" col-12 ">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="cui__utils__heading mb-0">
+                        <strong>Product Status</strong>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="toolbar">
+                        <button id="addProduct" type="button" class="btn btn-primary" data-toggle="modal"
+                          data-target="#dictionaryAddModal" data-title="Product Status" data-dictname="productStatus">
+                          <i class="fa fa-plus"></i> Add New
+                        </button>
+                      </div>
+                      <table id="operationsTable" data-toggle="table" data-pagination="true" data-search="true"
+                        data-buttons-align="right" data-show-refresh="true" data-buttons-class="primary" data-id-field="_id"
+                        data-select-item-name="_id" data-click-to-select="true" data-ajax="loadDictionary" data-toolbar="#addProduct"
+                        data-filter-control="true" data-query-params="queryParamsProductStatus">
+                        <thead>
+                          <tr>
+                            <th data-field="state" data-checkbox="true" data-field="_id"></th>
+                            <th data-sortable="true" data-field="name" >Category Name</th>
+
+                            <th data-formatter="formatStatusforDictionaryTable"   data-field="cssClass" >Tag Color</th>
+                            <th data-field="operate" data-formatter="productOperateFormatter" data-events="operateEvents">
+                              Actions</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class=" col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="cui__utils__heading mb-0">
+                        <strong>Event Status</strong>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="toolbar">
+                        <button id="addEvent" type="button" class="btn btn-primary" data-toggle="modal"
+                          data-target="#dictionaryAddModal" data-title="Event Status" data-dictname="eventStatus">
+                          <i class="fa fa-plus"></i> Add New
+                        </button>
+                      </div>
+                      <table id="operationsTable" data-toggle="table" data-pagination="true" data-search="true"
+                        data-buttons-align="right" data-show-refresh="true" data-buttons-class="primary" data-id-field="_id"
+                        data-select-item-name="_id" data-click-to-select="true" data-ajax="loadDictionary"
+                        data-toolbar="#addEvent" data-filter-control="true" data-query-params="queryParamsEventStatus">
+                        <thead>
+                          <tr>
+                            <th data-field="state" data-checkbox="true" data-field="_id"></th>
+                            <th data-sortable="true" data-field="name" >Category Name</th>
+                            <th data-formatter="formatStatusforDictionaryTable"   data-field="cssClass" >Tag Color</th>
+                            <!-- <th data-sortable="true" data-field="description">Description</th> -->
+                            <th data-field="operate" data-formatter="productOperateFormatter" data-events="operateEvents">
+                              Actions</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class=" col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="cui__utils__heading mb-0">
+                        <strong>Assignment Status</strong>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="toolbar">
+                        <button id="addAssignment" type="button" class="btn btn-primary" data-toggle="modal"
+                          data-target="#dictionaryAddModal" data-title="Assignment Status" data-dictname="assignmentStatus">
+                          <i class="fa fa-plus"></i> Add New
+                        </button>
+                      </div>
+                      <table id="operationsTable" data-toggle="table" data-pagination="true" data-search="true"
+                        data-buttons-align="right" data-show-refresh="true" data-buttons-class="primary" data-id-field="_id"
+                        data-select-item-name="_id" data-click-to-select="true" data-ajax="loadDictionary" data-toolbar="#addAssignment"
+                        data-filter-control="true" data-query-params="queryParamsAssignmentStatus">
+                        <thead>
+                          <tr>
+                            <th data-field="state" data-checkbox="true" data-field="_id"></th>
+                            <th data-sortable="true" data-field="name">Category Name</th>
+                            <th data-formatter="formatStatusforDictionaryTable"   data-field="cssClass" >Tag Color</th>
+
+                            <!-- <th data-sortable="true" data-field="description">Description</th> -->
+                            <th data-field="operate" data-formatter="productOperateFormatter" data-events="operateEvents">
+                              Actions</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
+</div>
+<div class="modal" id="dictionaryAddModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add new item to </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <input type="hidden" class="form-control" id="dictionaryName" placeholder="Name">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Name</label>
+              <input type="name" class="form-control" id="inputEmail4" placeholder="Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Color Tag</label>
+              <select required name="status" id="status" class="selectpicker form-control" data-live-search="true">
+                <option data-content="<span class='badge badge-success'>green</span>">Green</option>
+                <option data-content="<span class='badge badge-danger'>red</span>">red</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../partials/footer")   %>

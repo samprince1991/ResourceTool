@@ -1,0 +1,82 @@
+<%- include("../partials/header")   %>
+<div class="cui__layout__content">
+  <div class="cui__breadcrumbs">
+    <div class="cui__breadcrumbs__path">
+      <a href="/">Home</a>
+      <span>
+        <span class="cui__breadcrumbs__arrow"></span>
+        <a href="/events">
+          <span> Events</span>
+        </a>
+      </span>
+    </div>
+  </div>
+  <div class="cui__utils__content">
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <h5 class="mb-4"><strong>Events</strong></h5>
+          <div class="mb-5">
+        
+
+            <div id="addEventsToolbar">
+    
+              <a class="btn btn-primary ml-1" href="/events/add" role="button"><i
+                  class="fas fa-plus pr-2"></i> ADD NEW</a>
+
+            </div>
+
+
+            <form>
+              <table id="eventsTable" data-toggle="table" data-pagination="true" data-search="true"
+                data-buttons-align="right" data-show-refresh="true" data-buttons-class="primary" data-id-field="_id"
+                data-select-item-name="_id" data-click-to-select="true" data-ajax="loadEventsData"
+                data-toolbar="#addEventsToolbar" data-toolbar-align="right"   data-filter-control="true">
+                <thead>
+                  <tr>
+                    <!-- <th data-field="state" data-checkbox="true" data-field="_id"></th> -->
+                    <th data-sortable="true" data-field="name"  data-filter-control="input">Event Name</th>
+                    <th data-sortable="true" data-field="location"  data-filter-control="input">Event location</th>
+                    <th data-sortable="true" data-field="category" data-filter-control="input">Event Category</th>
+                    <th data-sortable="true" data-field="budget" data-filter-control="input">Event Budget</th>
+                    <th data-sortable="true" data-formatter="formatDateforTable" data-field="dateIn"
+                      data-filter-control="input">From date</th>
+                    <th data-sortable="true" data-formatter="formatDateforTable" data-field="dateOut"
+                      data-filter-control="input">To date</th>
+                    <th data-sortable="true" data-formatter="formatStatusforTable" data-search-formatter="false"
+                      data-field="status" data-filter-control="select">Event Status</th>
+                    <th data-sortable="true" data-filter-control="input" data-field="description">Event Description</th>
+                    <!-- <th data-field="operate" data-formatter="productOperateFormatter" data-events="operateEvents">
+                      Actions</th> -->
+                  </tr>
+                </thead>
+              </table>
+            </form>
+            <!-- <form id="opsForm">
+              <table id="opsTable" data-toggle="table" data-pagination="true" data-search="true"
+                data-buttons-align="right" data-show-refresh="true" data-show-columns="true" data-show-fullscreen="true"
+                data-buttons-class="primary" data-id-field="_id" data-select-item-name="_id" data-click-to-select="true"
+                data-ajax="loadOperationsData" data-toolbar="#remove" data-filter-control="true"
+                data-show-search-clear-button="true">
+                <thead>
+                  <tr>
+                    <th data-field="state" data-checkbox="true" data-field="_id"></th>
+                    <th data-sortable="true" data-field="product.name" data-filter-control="input">Product Name</th>
+                    <th data-sortable="true" data-field="eventId" data-filter-control="input">Event Id</th>
+                    <th data-sortable="true" data-field="dateIn" data-filter-control="input">From date</th>
+                    <th data-sortable="true" data-field="dateOut" data-filter-control="input">To date</th>
+                    <th data-sortable="true" data-field="status" data-filter-control="select">Status</th>
+                    <th data-sortable="true" data-field="description">Description</th>
+                    <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents">Actions</th>
+                  </tr>
+                </thead>
+              </table>
+            </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- data-ajax="loadOpsData" -->
+<%- include("../partials/footer")   %>

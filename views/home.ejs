@@ -1,0 +1,455 @@
+<%- include("./partials/header")   %>
+<div class="cui__layout__content">
+  <div class="cui__breadcrumbs">
+    <div class="cui__breadcrumbs__path">
+      <a href="javascript: void(0);">Home</a>
+      <span>
+        <span class="cui__breadcrumbs__arrow"></span>
+        <span>App</span>
+      </span>
+      <span>
+        <span class="cui__breadcrumbs__arrow"></span>
+        <strong class="cui__breadcrumbs__current">Product Manager Dashboard</strong>
+      </span>
+    </div>
+  </div>
+  <div class="cui__utils__content">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="cui__utils__heading">
+          <strong class="text-uppercase font-size-16">Total Statistics</strong>
+        </div>
+        <div class="row" id="dashboardStatistics">
+          <div class="col-xl-4">
+            <div class="card">
+              <div class="card-body position-relative overflow-hidden text-center">
+                <div class="font-size-36 font-weight-bold text-dark mb-n2" id="totalProducts">N/A</div>
+                <div class="text-uppercase">Products</div>
+                <div class="kit__c11__chartContainer">
+                  <div class="kit__c11__chart ct-hidden-points"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4">
+            <div class="card">
+              <div class="card-body position-relative overflow-hidden text-center">
+                <div class="font-size-36 font-weight-bold text-dark mb-n2" id="totalOperations">N/A</div>
+                <div class="text-uppercase">Assignments</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4">
+            <div class="card">
+              <div class="card-body position-relative overflow-hidden text-center">
+                <div class="font-size-36 font-weight-bold text-dark mb-n2" id="totalUsers">N/A</div>
+                <div class="text-uppercase">Users</div>
+                <div class="kit__c11-2__chartContainer">
+                  <div class="kit__c11-2__chart ct-hidden-points"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="cui__utils__heading">
+          <strong class="text-uppercase font-size-16">Quick Links</strong>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto ">
+              <a href="/products" class="after-loop-item card border-0 card-templates shadow-lg bg-warning text-light">
+                <div class="card-body d-flex justify-content-between align-items-center text-light">
+                  <i class="fa fa-border-all fa-2x"></i>
+                  <div class=" text-right flex-fill ">
+                    <h4 class="text-light">Products</h4>
+                    <p>Add New Products</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto ">
+              <a href="/operations"
+                class="after-loop-item card border-0 card-templates shadow-lg bg-success text-light">
+                <div class="card-body d-flex justify-content-between align-items-center text-light">
+                  <i class="fa fa-feather fa-2x"></i>
+                  <div class=" text-right flex-fill  ">
+                    <h4 class="text-light">Assignments</h4>
+                    <p>Add New Assignments</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto ">
+              <a href="/users/" class="after-loop-item card border-0 card-templates shadow-lg bg-danger text-light">
+                <div class="card-body d-flex justify-content-between align-items-center text-light">
+                  <i class="fa fa-user fa-2x"></i>
+                  <div class=" text-right flex-fill ">
+                    <h4 class="text-light">Users</h4>
+                    <p>Add New Users</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+
+            <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto ">
+              <a href="/events/" class="after-loop-item card border-0 card-templates shadow-lg bg-info text-light">
+                <div class="card-body d-flex justify-content-between align-items-center text-light">
+                  <i class="fa fa-calendar fa-2x"></i>
+                  <div class=" text-right flex-fill ">
+                    <h4 class="text-light">Events</h4>
+                    <p>Add New Events</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="cui__utils__heading">
+          <strong>LAST MONTH STATISTICS(Dummy Data)</strong>
+        </div>
+        <div class="row">
+          <div class="col-xl-3 col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="font-weight-bold text-dark font-size-24">
+                  520 </div>
+                <div>Total Products</div>
+                <div class="kit__c4__chart height-200 ct-hidden-points"></div>
+                <script>
+                  /////////////////////////////////////////////////////////////////////////////////////////
+                  // "Chart Widget 4" module scripts
+                  ; (function ($) {
+                    'use strict'
+                    $(function () {
+                      /////////////////////////////////////////////////////////////////////////////////////////
+                      new Chartist.Line(
+                        '.kit__c4__chart',
+                        {
+                          "labels": [
+                            "Jan",
+                            "Feb",
+                            "Mar",
+                            "Apr",
+                            "May",
+                            "Jun"
+                          ],
+                          "series": [
+                            {
+                              "className": "ct-series-a",
+                              "data": [
+                                2,
+                                5,
+                                4,
+                                5,
+                                7,
+                                5
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          chartPadding: {
+                            right: 0,
+                            left: 0,
+                            top: 5,
+                            bottom: 5,
+                          },
+                          fullWidth: true,
+                          showPoint: true,
+                          lineSmooth: true,
+                          axisY: {
+                            showGrid: false,
+                            showLabel: false,
+                            offset: 0,
+                          },
+                          axisX: {
+                            showGrid: true,
+                            showLabel: true,
+                            offset: 20,
+                          },
+                          showArea: false,
+                          plugins: [Chartist.plugins.tooltip()],
+                        },
+                      )
+                      /////////////////////////////////////////////////////////////////////////////////////////
+                    })
+                  })(jQuery)
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="font-weight-bold text-dark font-size-24">
+                  540 </div>
+                <div>Total Assignments</div>
+                <div class="kit__c4-1__chart height-200 ct-hidden-points"></div>
+                <script>
+                    /////////////////////////////////////////////////////////////////////////////////////////
+                    // "Chart Widget 4-1" module scripts
+                    ; (function ($) {
+                      'use strict'
+                      $(function () {
+                        /////////////////////////////////////////////////////////////////////////////////////////
+                        new Chartist.Line(
+                          '.kit__c4-1__chart',
+                          {
+                            "labels": [
+                              "Jan",
+                              "Feb",
+                              "Mar",
+                              "Apr",
+                              "May",
+                              "Jun"
+                            ],
+                            "series": [
+                              {
+                                "className": "ct-series-b",
+                                "data": [
+                                  1,
+                                  5,
+                                  2,
+                                  5,
+                                  4,
+                                  7
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            chartPadding: {
+                              right: 0,
+                              left: 0,
+                              top: 5,
+                              bottom: 5,
+                            },
+                            fullWidth: true,
+                            showPoint: true,
+                            lineSmooth: true,
+                            axisY: {
+                              showGrid: false,
+                              showLabel: false,
+                              offset: 0,
+                            },
+                            axisX: {
+                              showGrid: true,
+                              showLabel: true,
+                              offset: 20,
+                            },
+                            showArea: false,
+                            plugins: [Chartist.plugins.tooltip()],
+                          },
+                        )
+                        /////////////////////////////////////////////////////////////////////////////////////////
+                      })
+                    })(jQuery)
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="font-weight-bold text-dark font-size-24">
+                  540
+                </div>
+                <div>Total Events</div>
+                <div class="kit__c4-2__chart height-200 ct-hidden-points"></div>
+                <script>
+                    /////////////////////////////////////////////////////////////////////////////////////////
+                    // "Chart Widget 4-2" module scripts
+                    ; (function ($) {
+                      'use strict'
+                      $(function () {
+                        /////////////////////////////////////////////////////////////////////////////////////////
+                        new Chartist.Line(
+                          '.kit__c4-2__chart',
+                          {
+                            "labels": [
+                              "Jan",
+                              "Feb",
+                              "Mar",
+                              "Apr",
+                              "May",
+                              "Jun"
+                            ],
+                            "series": [
+                              {
+                                "className": "ct-series-j",
+                                "data": [
+                                  2,
+                                  3,
+                                  2,
+                                  4,
+                                  6,
+                                  5
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            chartPadding: {
+                              right: 0,
+                              left: 0,
+                              top: 5,
+                              bottom: 5,
+                            },
+                            fullWidth: true,
+                            showPoint: true,
+                            lineSmooth: true,
+                            axisY: {
+                              showGrid: false,
+                              showLabel: false,
+                              offset: 0,
+                            },
+                            axisX: {
+                              showGrid: true,
+                              showLabel: true,
+                              offset: 20,
+                            },
+                            showArea: false,
+                            plugins: [Chartist.plugins.tooltip()],
+                          },
+                        )
+                        /////////////////////////////////////////////////////////////////////////////////////////
+                      })
+                    })(jQuery)
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="font-weight-bold text-dark font-size-24">
+                  54 </div>
+                <div>Total Users</div>
+                <div class="kit__c4-3__chart height-200 ct-hidden-points"></div>
+                <script>
+                    /////////////////////////////////////////////////////////////////////////////////////////
+                    // "Chart Widget 4-3" module scripts
+                    ; (function ($) {
+                      'use strict'
+                      $(function () {
+                        /////////////////////////////////////////////////////////////////////////////////////////
+                        new Chartist.Line(
+                          '.kit__c4-3__chart',
+                          {
+                            "labels": [
+                              "Jan",
+                              "Feb",
+                              "Mar",
+                              "Apr",
+                              "May",
+                              "Jun"
+                            ],
+                            "series": [
+                              {
+                                "className": "ct-series-d",
+                                "data": [
+                                  1,
+                                  5,
+                                  2,
+                                  5,
+                                  4,
+                                  7
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            chartPadding: {
+                              right: 0,
+                              left: 0,
+                              top: 5,
+                              bottom: 5,
+                            },
+                            fullWidth: true,
+                            showPoint: true,
+                            lineSmooth: true,
+                            axisY: {
+                              showGrid: false,
+                              showLabel: false,
+                              offset: 0,
+                            },
+                            axisX: {
+                              showGrid: true,
+                              showLabel: true,
+                              offset: 20,
+                            },
+                            showArea: false,
+                            plugins: [Chartist.plugins.tooltip()],
+                          },
+                        )
+                        /////////////////////////////////////////////////////////////////////////////////////////
+                      })
+                    })(jQuery)
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="cui__utils__heading mb-0">
+              <strong>Recent Assignments</strong>
+            </div>
+            <div class="text-muted">
+              Top 10 recent Assignments </div>
+          </div>
+          <div class="card-body">
+
+            <form>
+              <table id="operationsTable" data-toggle="table" data-pagination="true" data-search="true"
+                data-buttons-align="right" data-show-refresh="true" data-buttons-class="primary" data-id-field="_id"
+                data-select-item-name="_id" data-click-to-select="true" data-ajax="loadOperationsData"
+                data-toolbar="#addOperationsToolbar" data-toolbar-align="right" data-filter-control="true">
+                <thead>
+                  <tr>
+                    <!-- <th data-field="state" data-checkbox="true" data-field="_id"></th> -->
+                    <th data-sortable="true" data-field="product.name" data-filter-control="input">Product Name</th>
+                    <th data-sortable="true" data-field="event.name" data-filter-control="input">Event Name</th>
+                    <th data-sortable="true" data-formatter="formatDateforTable" data-field="dateIn"
+                      data-filter-control="input">From date</th>
+                    <th data-sortable="true" data-formatter="formatDateforTable" data-field="dateOut"
+                      data-filter-control="input">To date</th>
+                    <th data-sortable="true" data-field="assignedTo.fullName" data-filter-control="input">Assigned
+                      To
+                    </th>
+                    <th data-sortable="true" data-formatter="formatStatusforTable" data-search-formatter="false"
+                      data-field="status" data-filter-control="select">Status</th>
+                    <th data-sortable="true" data-field="description">Description</th>
+                    <th data-field="operate" data-formatter="operationsEventFormatter"
+                      data-events="operationsEvent">
+                      Actions</th>
+                  </tr>
+                </thead>
+              </table>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Include Modal -->
+<%- include("./operations/modals/operationAction")   %>
+<!-- Include Footer -->
+<%- include("./partials/footer")   %>

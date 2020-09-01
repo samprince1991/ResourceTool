@@ -1,0 +1,192 @@
+<%- include("../partials/header")   %>
+<div class="cui__layout__content">
+  <div class="cui__breadcrumbs">
+    <div class="cui__breadcrumbs__path">
+      <a href="/">Home</a>
+      <span>
+        <span class="cui__breadcrumbs__arrow"></span>
+        <a href="/products">
+          <span> Products</span>
+        </a>
+
+      </span>
+      <span>
+        <span class="cui__breadcrumbs__arrow"></span>
+        <strong class="cui__breadcrumbs__current">New</strong>
+      </span>
+    </div>
+  </div>
+  <div class="cui__utils__content">
+    <div class="air__utils__heading">
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="mb-4">
+          <strong>Add new product</strong>
+        </h4>
+
+
+  
+        <form id="addProductForm">
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="name">Product Name*</label>
+              <input type="text" class="form-control" id="name" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="category">Category*</label>
+              <input type="text" class="form-control" id="category" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="category">Manufacturer*</label>
+              <input type="text" class="form-control" id="manufacturer" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="name">Model*</label>
+              <input type="text" class="form-control" id="model" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="name">Serial Number</label>
+              <input type="text" class="form-control" id="serialNo" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="name">Asset Tag*</label>
+              <input type="text" class="form-control" id="assetTag" />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="category">Location</label>
+              <input type="text" class="form-control" id="location" />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="category">Vendor*</label>
+              <input type="text" class="form-control" id="vendor" />
+
+            
+            </div>
+
+
+
+            <div class="form-group col-md-3">
+              <label for="category">purchase Date</label>
+              <input type="text" class="form-control" id="purchaseDate" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="category">Purchase Cost</label>
+              <input type="text" class="form-control" id="purchaseCost" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="category">Warrenty Info</label>
+              <input type="text" class="form-control" id="warrenty" />
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="name">Status*</label>
+              <!-- <input required class="form-control" type="status" name="status" id="status" placeholder="Status"> -->
+              <select data-formatter="formatStatusforTable" title="Select Status" required name="status" id="status"
+                class="selectpicker form-control" data-live-search="true">
+
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label>Product Image(optional)</label>
+              <input id="image" type="file" class="dropify" />
+
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" placeholder="Detailed product description" />
+          </div>
+          <div class="form-group">
+            <label class="air__utils__control air__utils__control__checkbox">
+              <input type="checkbox" checked="checked" />
+              <span class="air__utils__control__indicator"></span>
+              Set Product as active </label>
+          </div>
+          <button class="btn btn-primary text-center w-100 ">
+            <strong>Create</strong>
+          </button>
+
+
+        </form>
+      </div>
+    </div>
+    <!-- <div class="card">
+      <div class="card-body">
+        <h4 class="mb-4">
+          <strong>Validation & Background</strong>
+        </h4>
+        <div class="bg-light rounded-lg p-5">
+          <form id="form-validation" name="form-validation" method="POST" class="pt-3 width-600 mx-auto">
+            <div class="form-group">
+              <label class="form-label" for="validation-username">Username</label>
+              <input id="validation-username" class="form-control" name="validation[username]" type="text"
+                data-validation="[L>=6, L<=18, MIXED]"
+                data-validation-message="$ must be between 6 and 18 characters. No special characters allowed."
+                data-validation-regex="/^((?!admin).)*$/i"
+                data-validation-regex-message='The word "Admin" is not allowed in the $' />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="validation-password">Password</label>
+              <input id="validation-password" class="form-control" name="validation[password]" type="password"
+                data-validation="[L>=6]" data-validation-message="$ must be at least 6 characters" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="validation-password-confirm">Confirm Password</label>
+              <input id="validation-password-confirm" class="form-control" name="validation[password-confirm]"
+                type="password" data-validation="[V==validation[password]]"
+                data-validation-message="$ does not match the password" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="validation-email">Email</label>
+              <input id="validation-email" class="form-control" name="validation[email]" type="text"
+                data-validation="[EMAIL]" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="validation-email-confirm">Confirm Email</label>
+              <input id="validation-email-confirm" class="form-control" name="validation[email-confirm]" type="text"
+                data-validation="[V==validation[email]]" data-validation-message="$ does not match the email" />
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-success mr-2 px-5">Validate</button>
+              <button type="button" class="btn btn-light remove-error">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> -->
+    <script>
+      ; (function ($) {
+        'use strict'
+        $(function () {
+          $('.dropify').dropify()
+          $('#form-validation').validate({
+            submit: {
+              settings: {
+                inputContainer: '.form-group',
+                errorListClass: 'form-control-error',
+                errorClass: 'has-danger',
+              },
+            },
+          })
+          $('#form-validation .remove-error').on('click', function () {
+            $('#form-validation').removeError()
+          })
+          $('#slider-1').ionRangeSlider({
+            min: 0,
+            max: 100,
+            from: 50,
+            step: 10,
+            grid: true,
+            grid_num: 10,
+          })
+        })
+      })(jQuery)
+    </script>
+  </div>
+</div>
+<%- include("../partials/footer")   %>

@@ -1,0 +1,100 @@
+<%- include("../partials/header")   %>
+<div class="cui__layout__content">
+  <div class="cui__breadcrumbs">
+    <div class="cui__breadcrumbs__path">
+      <a href="/">Home</a>
+      <span>
+        <span class="cui__breadcrumbs__arrow"></span>
+        <a href="/operations">
+          <span> Operations</span>
+        </a>
+      </span>
+    </div>
+  </div>
+  <div class="cui__utils__content">
+    <div class="card">
+      <div class="card-body">
+
+        <h4 class="mb-4"><strong>Assignments</strong></h4>
+        <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-bold mb-4" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+              aria-selected="true">
+              <!-- <i class="fe fe-activity mr-1"></i> -->
+              All</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+              aria-selected="false">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+              aria-selected="false">Closed</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div>
+              <div class="mb-5">
+                <!-- <div class="d-flex flex-row-reverse">
+                  <a class="btn btn-primary btn-sm" href="/operations/add"><i class="fas fa-plus-circle pr-2"></i>Add
+                    New</a>
+                </div> -->
+
+                <div id="addOperationsToolbar">
+                  <!-- <button id="addOperations" type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#dictionaryAddModal" data-title="Product Status" data-dictname="productStatus">
+                    <i class="fa fa-plus"></i> Add New
+                  </button> -->
+                  <a class="btn btn-primary ml-1" href="/operations/add" role="button"><i
+                      class="fas fa-plus pr-2"></i>Assign Product</a>
+
+                </div>
+                <form>
+                  <table id="operationsTable" data-toggle="table" data-pagination="true" data-search="true"
+                    data-buttons-align="right" data-show-refresh="true" data-buttons-class="primary" data-id-field="_id"
+                    data-select-item-name="_id" data-click-to-select="true" data-ajax="loadOperationsData"
+                    data-toolbar="#addOperationsToolbar" data-toolbar-align="right" data-filter-control="true">
+                    <thead>
+                      <tr>
+                        <!-- <th data-field="state" data-checkbox="true" data-field="_id"></th> -->
+                        <th data-sortable="true" data-field="product.name" data-filter-control="input">Product Name</th>
+                        <th data-sortable="true" data-field="event.name" data-filter-control="input">Event Name</th>
+                        <th data-sortable="true" data-formatter="formatDateforTable" data-field="dateIn"
+                          data-filter-control="input">From date</th>
+                        <th data-sortable="true" data-formatter="formatDateforTable" data-field="dateOut"
+                          data-filter-control="input">To date</th>
+                        <th data-sortable="true" data-field="assignedTo.fullName" data-filter-control="input">Assigned
+                          To
+                        </th>
+                        <th data-sortable="true" data-formatter="formatStatusforTable" data-search-formatter="false"
+                          data-field="status" data-filter-control="select">Status</th>
+                        <th data-sortable="true" data-field="description">Description</th>
+                        <th data-field="operate" data-formatter="operationsEventFormatter"
+                          data-events="operationsEvent">
+                          Actions</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </form>
+              </div>
+            </div>
+
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">ACTIVE</div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">CLOSED</div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Include Modal -->
+<%- include("./modals/operationAction")   %>
+<!-- Include Footer -->
+<%- include("../partials/footer")   %>

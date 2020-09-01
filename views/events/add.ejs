@@ -1,0 +1,115 @@
+<%- include("../partials/header")   %>
+<div class="cui__layout__content">
+  <div class="cui__breadcrumbs">
+    <div class="cui__breadcrumbs__path">
+      <a href="/">Home</a>
+      <span>
+        <span class="cui__breadcrumbs__arrow"></span>
+        <a href="/events">
+          <span> Events</span>
+        </a>
+      </span>
+      <span>
+        <span class="cui__breadcrumbs__arrow"></span>
+        <strong class="cui__breadcrumbs__current">New</strong>
+      </span>
+    </div>
+  </div>
+  <div class="cui__utils__content">
+    <div class="air__utils__heading">
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="mb-4">
+          <strong>Create Event</strong>
+        </h4>
+        <form id="addEventsForm">
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="name">Event Name</label>
+              <input required class="form-control" type="text" name="name" id="name" placeholder="Event Name">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="name">Event Location</label>
+              <input required class="form-control" type="text" name="location" id="location"
+                placeholder="Event Location">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="name">Event Category</label>
+              <input required class="form-control" type="text" name="category" id="category"
+                placeholder="Event category">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="name">Event Budget</label>
+              <input required class="form-control" type="text" name="budget" id="budget" placeholder="Event category">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">From date</label>
+
+              <input required class="form-control" type="text" name="dateIn" id="dateIn">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="name">To date</label>
+              <input required class="form-control" type="dateOut" name="dateOut" id="dateOut">
+            </div>
+
+          </div>
+          <div class="form-row">
+
+            <div class="form-group col-md-3">
+              <label for="name">Event Status</label>
+              <!-- <input required class="form-control" type="status" name="status" id="status" placeholder="Status"> -->
+              <select required name="status" id="status" class="selectpicker form-control" data-live-search="true">
+              </select>
+            </div>
+            <div class="form-group col-md-9">
+              <label for="description">Event Description</label>
+              <input required class="form-control" type="text" name="description" id="description"
+                placeholder="Product description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="air__utils__control air__utils__control__checkbox">
+              <input type="checkbox" checked="checked" />
+              <span class="air__utils__control__indicator"></span>
+              Set event as active </label>
+          </div>
+          <button class="btn btn-primary text-center w-100 ">
+            <strong>Assign</strong>
+          </button>
+        </form>
+      </div>
+    </div>
+    <script>
+      ; (function ($) {
+        'use strict'
+        $(function () {
+          $('.dropify').dropify()
+          $('#form-validation').validate({
+            submit: {
+              settings: {
+                inputContainer: '.form-group',
+                errorListClass: 'form-control-error',
+                errorClass: 'has-danger',
+              },
+            },
+          })
+          $('#form-validation .remove-error').on('click', function () {
+            $('#form-validation').removeError()
+          })
+          $('#slider-1').ionRangeSlider({
+            min: 0,
+            max: 100,
+            from: 50,
+            step: 10,
+            grid: true,
+            grid_num: 10,
+          })
+        })
+      })(jQuery)
+    </script>
+  </div>
+</div>
+<%- include("../partials/footer")   %>
